@@ -13,4 +13,5 @@ public:
 private:
     vector<vector<int>> adj; // adjacency matrix of articles
     map<string, int> articleIdx; // Contains the indexes for each article
+    string filename;
 };
