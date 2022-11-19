@@ -1,11 +1,10 @@
 #include "wiki.h"
 #include <iostream>
 #include <fstream>
+#include <stack>
 
 wiki::wiki() {
     filename = "enwiki-2013.txt";
-    //number of total nodes
-    int node_num = 4203323;
 
     ifstream infile(filename);
 
@@ -53,3 +52,20 @@ string wiki::getArticle(int idx) {
     } 
 }
 
+void wiki::DFS(int root) {
+    vector<bool> visited(node_num, false);
+    stack<int> stk;
+    stk.push(root);
+    visited[root] = true;
+    while (!stk.empty()) {
+        int curr = stk.top();
+        stk.pop();
+        traversal.push_back(curr);
+        for (unsigned int i = 0; i < adj[curr].size(); i++) {
+            if (!visited[adj[curr][i]]) {
+                stk.push(adj[curr][i]);
+                visited[adj[curr][i]] = true;
+            }
+        } 
+    }
+}
