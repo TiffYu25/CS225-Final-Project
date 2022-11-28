@@ -11,6 +11,7 @@ bool is_digits(const std::string &str) {
 wiki::wiki() {
     file = "enwiki-2013.txt";
     reader(file);
+    DFS(0, node_num);
 }
 
 wiki::wiki(string filename) {
@@ -87,6 +88,10 @@ vector<vector<int>> wiki::getAdj() {
     return adj;
 }
 
+void wiki::setAdj(vector<vector<int>> toset) {
+    adj = toset;
+}
+
 string wiki::getArticle(int idx) {
     for(auto &it : articleIdx) { 
         if(it.second == idx) { 
@@ -95,8 +100,9 @@ string wiki::getArticle(int idx) {
     } 
 }
 
-void wiki::DFS(int root) {
-    vector<bool> visited(node_num, false);
+//num is number of nodes
+void wiki::DFS(int root, int num) {
+    vector<bool> visited(num, false);
     stack<int> stk;
     stk.push(root);
     visited[root] = true;

@@ -9,12 +9,13 @@ class wiki {
 public:
     wiki();
     wiki(string filename);
+    vector<vector<int>> getAdj();
+    void setAdj(vector<vector<int>> toset);
     int getIndex(string article) { return articleIdx[article]; }
     string getArticle(int idx);
     vector<int> getTraversal();
     void reader(string filename);
-    void DFS(int root);
-    vector<vector<int>> getAdj();
+    void DFS(int root, int num);
 private:
     vector<vector<int>> adj; // adjacency lists for articles
     map<string, int> articleIdx; // Contains the indexes for each article
