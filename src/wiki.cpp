@@ -9,9 +9,8 @@ bool is_digits(const std::string &str) {
 }
 
 wiki::wiki() {
-    file = "enwiki-2013.txt";
+    file = "./tests/enwiki-2013.txt";
     reader(file, node_num);
-    DFS(0, node_num);
 }
 
 wiki::wiki(string filename, int num) {
@@ -36,6 +35,10 @@ void wiki::reader(string filename, int num) {
 
     //for loop completely populates adj while doing some cleaning checks in the process
     for (unsigned int i = 4; i < vec.size(); i++) {
+        //if we reach empty line we should immediately exit
+        if (!isdigit(vec[i][0])) {
+            break;
+        }
         string tmp = "";
         int x = 0;
         for (unsigned int j = 0; j < vec[i].length(); j++) {
@@ -83,6 +86,8 @@ void wiki::reader(string filename, int num) {
             return;
         }
         adj[toset].push_back(toadd);
+        cout << i;
+        cout << "\n";
     }
 }
 

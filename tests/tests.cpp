@@ -35,7 +35,7 @@ TEST_CASE("file reads properly check 2", "[test]") {
     REQUIRE(example == correct_example);
 }
 
-/*TEST_CASE("DFS check 1", "[test]") {
+TEST_CASE("DFS check 1", "[test]") {
     //filename doesn't matter here since vector will be passed into adj setter, but I assume calling default constructor
     //and running on wiki txt will just make it rilly slow
     string filename = "../tests/example 1.txt";
@@ -51,7 +51,7 @@ TEST_CASE("file reads properly check 2", "[test]") {
     vector<int> correct_example{ 0, 1, 2, 4, 3 };
     vector<int> example = test.getTraversal();
     REQUIRE(example == correct_example);
-}*/
+}
 
 
 
