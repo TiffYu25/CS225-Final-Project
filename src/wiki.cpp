@@ -10,28 +10,28 @@ bool is_digits(const std::string &str) {
 
 wiki::wiki() {
     file = "enwiki-2013.txt";
-    reader(file);
+    reader(file, node_num);
     DFS(0, node_num);
 }
 
-wiki::wiki(string filename) {
+wiki::wiki(string filename, int num) {
     file = filename;
-    reader(file);
+    reader(file, num);
 }
 
-void wiki::reader(string filename) {
+void wiki::reader(string filename, int num) {
     ifstream infile(filename);
 
     //ignore first 2 vectors, this is all to get adj right size/to make each article index already there
     vector<int> inner_vec;
-    vector<vector<int>> toset(node_num, inner_vec);
+    vector<vector<int>> toset(num, inner_vec);
     adj = toset;
 
     //loads each line of the .txt as a string into string vector vec
     vector<string> vec;
     string line;
     while (getline(infile, line)) {
-		vec.push_back(line);
+        vec.push_back(line);
 	}
 
     //for loop completely populates adj while doing some cleaning checks in the process
@@ -39,16 +39,17 @@ void wiki::reader(string filename) {
         string tmp = "";
         int x = 0;
         for (unsigned int j = 0; j < vec[i].length(); j++) {
+            x = j;
             if (vec[i][j] == ' ') {
                 break;
             }
             tmp += vec[i][j];
-            x = j;
         }
         //by this point string tmp should be first number in line
         //check tmp is actually numeric
         if (tmp.empty() || !is_digits(tmp)) {
             cout << "first string not valid";
+            cout << "\n";
             cout << i;
             return;
         }
@@ -61,7 +62,7 @@ void wiki::reader(string filename) {
         }
         tmp = "";
         for (unsigned int w = x + 1; w < vec[i].length(); w++) {
-            if (vec[i][w] == ' ') {
+            if (!isdigit(vec[i][w])) {
                 break;
             }
             tmp += vec[i][w];
@@ -69,7 +70,8 @@ void wiki::reader(string filename) {
         //by this point string tmp should be second number in line
         //check tmp is actually numeric
         if (tmp.empty() || !is_digits(tmp)) {
-            cout << "first string not valid";
+            cout << "second string not valid";
+            cout << "\n";
             cout << i;
             return;
         }
