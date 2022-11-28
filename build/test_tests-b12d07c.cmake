@@ -1,0 +1,7 @@
+add_test( [==[file reads properly check 1]==] [==[/workspaces/CS 225/CS225-Final-Project/build/test]==] [==[file reads properly check 1]==]  )
+set_tests_properties( [==[file reads properly check 1]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/CS225-Final-Project/build]==])
+add_test( [==[file reads properly check 2]==] [==[/workspaces/CS 225/CS225-Final-Project/build/test]==] [==[file reads properly check 2]==]  )
+set_tests_properties( [==[file reads properly check 2]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/CS225-Final-Project/build]==])
+add_test( [==[DFS check 1]==] [==[/workspaces/CS 225/CS225-Final-Project/build/test]==] [==[DFS check 1]==]  )
+set_tests_properties( [==[DFS check 1]==] PROPERTIES WORKING_DIRECTORY [==[/workspaces/CS 225/CS225-Final-Project/build]==])
+set( test_TESTS [==[file reads properly check 1]==] [==[file reads properly check 2]==] [==[DFS check 1]==])

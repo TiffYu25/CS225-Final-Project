@@ -8,7 +8,7 @@
 #include "wiki.h"
 
 TEST_CASE("file reads properly check 1", "[test]") {
-    string filename = "example 1.txt";
+    string filename = "../tests/example 1.txt";
     wiki test(filename);
     vector<vector<int>> example = test.getAdj();
     const vector<vector<int>> correct_example = {{1, 2, 3, 4},\
@@ -22,7 +22,7 @@ TEST_CASE("file reads properly check 1", "[test]") {
 }
 
 TEST_CASE("file reads properly check 2", "[test]") {
-    string filename = "example 2.txt";
+    string filename = "../tests/example 2.txt";
     wiki test(filename);
     vector<vector<int>> example = test.getAdj();
     const vector<vector<int>> correct_example = {{39, 16, 27, 15},\
@@ -38,7 +38,7 @@ TEST_CASE("file reads properly check 2", "[test]") {
 TEST_CASE("DFS check 1", "[test]") {
     //filename doesn't matter here since vector will be passed into adj setter, but I assume calling default constructor
     //and running on wiki txt will just make it rilly slow
-    string filename = "example 1.txt";
+    string filename = "../tests/example 1.txt";
     wiki test(filename);
     const vector<vector<int>> test_graph = {{3, 2, 1},\
      {2, 0}, \

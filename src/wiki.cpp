@@ -98,6 +98,7 @@ string wiki::getArticle(int idx) {
             return it.first;
         } 
     } 
+    return "invalid";
 }
 
 //num is number of nodes
