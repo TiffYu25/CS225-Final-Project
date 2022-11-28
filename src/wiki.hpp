@@ -9,10 +9,12 @@ bool is_digits(const std::string &str) {
 }
 
 wiki::wiki() {
+    file = "enwiki-2013.txt";
+    reader(file);
 }
 
-wiki::wiki(string file) {
-    file = "enwiki-2013.txt";
+wiki::wiki(string filename) {
+    file = filename;
     reader(file);
 }
 

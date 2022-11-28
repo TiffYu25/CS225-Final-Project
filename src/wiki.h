@@ -8,7 +8,7 @@ using namespace std;
 class wiki {
 public:
     wiki();
-    wiki::wiki(string file);
+    wiki(string filename);
     int getIndex(string article) { return articleIdx[article]; }
     string getArticle(int idx);
     vector<int> getTraversal();
