@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <stack>
+#include <sstream>
 
 //used for checking that strings are just numeric
 bool is_digits(const std::string &str) {
@@ -20,67 +21,14 @@ wiki::wiki(string filename) {
 }
 
 void wiki::reader(string filename) {
-    ifstream infile(filename);
-
-    //ignore first 2 vectors, this is all to get adj right size/to make each article index already there
-    vector<int> inner_vec;
-    vector<vector<int>> toset(node_num, inner_vec);
-    adj = toset;
-
-    //loads each line of the .txt as a string into string vector vec
-    vector<string> vec;
-    string line;
-    while (getline(infile, line)) {
-		vec.push_back(line);
-	}
-
+    int size = 0;
+    vector<vector<int>> vec = file_to_vector(filename, size);
+    adj = vector<vector<int>>(size, vector<int>());
     //for loop completely populates adj while doing some cleaning checks in the process
-    for (unsigned int i = 4; i < vec.size(); i++) {
-        string tmp = "";
-        int x = 0;
-        for (unsigned int j = 0; j < vec[i].length(); j++) {
-            if (vec[i][j] == ' ') {
-                break;
-            }
-            tmp += vec[i][j];
-            x = j;
-        }
-        //by this point string tmp should be first number in line
-        //check tmp is actually numeric
-        if (tmp.empty() || !is_digits(tmp)) {
-            cout << "first string not valid";
-            cout << i;
-            return;
-        }
-        int toset = stoi(tmp);
-        //bound check
-        if (toset >= node_num || toset < 0) {
-            cout << "first number out of bounds node";
-            cout << i;
-            return;
-        }
-        tmp = "";
-        for (unsigned int w = x + 1; w < vec[i].length(); w++) {
-            if (vec[i][w] == ' ') {
-                break;
-            }
-            tmp += vec[i][w];
-        }
-        //by this point string tmp should be second number in line
-        //check tmp is actually numeric
-        if (tmp.empty() || !is_digits(tmp)) {
-            cout << "first string not valid";
-            cout << i;
-            return;
-        }
-        int toadd = stoi(tmp);
-        //bounds check
-        if (toadd >= node_num || toadd < 0) {
-            cout << "second number out of bounds node";
-            cout << i;
-            return;
-        }
-        adj[toset].push_back(toadd);
+    for (vector<int> line : vec) {
+        int article = line[0];
+        int hyperlink = line[1];
+        adj[article].push_back(hyperlink);
     }
 }
 
