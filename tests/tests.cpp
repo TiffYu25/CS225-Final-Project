@@ -28,11 +28,19 @@ TEST_CASE("file reads properly check 2", "[test]") {
     const vector<vector<int>> correct_example = {{39, 16, 27, 15},\
      {5, 8}, \
      {13, 3, 4}, \
-     {18, 39, 80, 1128474}, \
-     {3879252, 93, 76, 15, 18}
+     {18, 39, 80, 10028474}, \
+     {56879252, 93, 76, 15, 18}
      };
 
     REQUIRE(example == correct_example);
+}
+
+TEST_CASE("dataset reads properly check 1", "[test]") {
+    string filename = "../tests/enwiki-2013.txt";
+    wiki test(filename);
+    vector<vector<int>> example = test.getAdj();
+    const vector<int> correct_example = { 2 };
+    REQUIRE(example[0] == correct_example);
 }
 
 TEST_CASE("DFS check 1", "[test]") {
@@ -52,6 +60,3 @@ TEST_CASE("DFS check 1", "[test]") {
     vector<int> example = test.getTraversal();
     REQUIRE(example == correct_example);
 }
-
-
-
