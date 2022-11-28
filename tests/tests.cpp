@@ -40,9 +40,9 @@ TEST_CASE("DFS check 1", "[test]") {
     //and running on wiki txt will just make it rilly slow
     string filename = "example 1.txt";
     wiki test(filename);
-    const vector<vector<int>> test_graph = {{1, 2, 3},\
-     {0, 2}, \
-     {0, 1, 4}, \
+    const vector<vector<int>> test_graph = {{3, 2, 1},\
+     {2, 0}, \
+     {4, 1, 0}, \
      {0}, \
      {2}
      };
