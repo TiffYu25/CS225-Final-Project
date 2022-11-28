@@ -3,9 +3,20 @@
 #include <fstream>
 #include <stack>
 
-wiki::wiki() {
-    filename = "enwiki-2013.txt";
+//used for checking that strings are just numeric
+bool is_digits(const std::string &str) {
+    return str.find_first_not_of("0123456789") == string::npos;
+}
 
+wiki::wiki() {
+}
+
+wiki::wiki(string file) {
+    file = "enwiki-2013.txt";
+    reader(file);
+}
+
+void wiki::reader(string filename) {
     ifstream infile(filename);
 
     //ignore first 2 vectors, this is all to get adj right size/to make each article index already there
@@ -20,7 +31,7 @@ wiki::wiki() {
 		vec.push_back(line);
 	}
 
-    //for loop completely populates adj
+    //for loop completely populates adj while doing some cleaning checks in the process
     for (unsigned int i = 4; i < vec.size(); i++) {
         string tmp = "";
         int x = 0;
@@ -31,7 +42,20 @@ wiki::wiki() {
             tmp += vec[i][j];
             x = j;
         }
+        //by this point string tmp should be first number in line
+        //check tmp is actually numeric
+        if (tmp.empty() || !is_digits(tmp)) {
+            cout << "first string not valid";
+            cout << i;
+            return;
+        }
         int toset = stoi(tmp);
+        //bound check
+        if (toset >= node_num || toset < 0) {
+            cout << "first number out of bounds node";
+            cout << i;
+            return;
+        }
         tmp = "";
         for (unsigned int w = x + 1; w < vec[i].length(); w++) {
             if (vec[i][w] == ' ') {
@@ -39,9 +63,26 @@ wiki::wiki() {
             }
             tmp += vec[i][w];
         }
+        //by this point string tmp should be second number in line
+        //check tmp is actually numeric
+        if (tmp.empty() || !is_digits(tmp)) {
+            cout << "first string not valid";
+            cout << i;
+            return;
+        }
         int toadd = stoi(tmp);
+        //bounds check
+        if (toadd >= node_num || toadd < 0) {
+            cout << "second number out of bounds node";
+            cout << i;
+            return;
+        }
         adj[toset].push_back(toadd);
     }
+}
+
+vector<vector<int>> wiki::getAdj() {
+    return adj;
 }
 
 string wiki::getArticle(int idx) {
@@ -69,3 +110,9 @@ void wiki::DFS(int root) {
         } 
     }
 }
+
+vector<int> wiki::getTraversal() {
+    return traversal;
+}
+
+
