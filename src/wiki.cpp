@@ -130,3 +130,4 @@ void wiki::DFS(int root, int num) {
 vector<int> wiki::getTraversal() {
     return traversal;
 }
+
