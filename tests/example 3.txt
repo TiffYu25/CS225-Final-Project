@@ -1,0 +1,29 @@
+# Directed graph: enwiki-2013.txt
+# English Wikipedia hyperlink network
+# Nodes: 4203323 Edges: 101311614
+# FromNodeId ToNodeId1 0
+0 39
+0 16
+0 27
+0 15
+1 5
+1 8
+2 13
+2 3
+2 4
+3 18
+3 39
+3 80
+3 1128474
+4 3879252
+4 93
+4 7689
+4 15
+4 18
+5 1412456
+5 69420
+5 420
+5 567
+5 5
+5 678
+5 40

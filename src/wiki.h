@@ -1,6 +1,4 @@
 #pragma once
-
-#include "utils.h"
 #include <vector>
 #include <map>
 #include <string>
@@ -10,13 +8,13 @@ using namespace std;
 class wiki {
 public:
     wiki();
-    wiki(string filename);
+    wiki(string filename, int num);
     vector<vector<int>> getAdj();
     void setAdj(vector<vector<int>> toset);
     int getIndex(string article) { return articleIdx[article]; }
     string getArticle(int idx);
     vector<int> getTraversal();
-    void reader(string filename);
+    void reader(string filename, int num);
     void DFS(int root, int num);
 private:
     vector<vector<int>> adj; // adjacency lists for articles
