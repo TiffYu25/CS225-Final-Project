@@ -192,14 +192,78 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/basic_string.tcc
+  /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/debug/deque \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc
 
+
+/usr/include/c++/11/bits/istream.tcc:
+
+/usr/include/c++/11/istream:
+
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
+
+/usr/include/c++/11/cwctype:
+
+/usr/include/c++/11/stdexcept:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
+
+/usr/include/c++/11/bits/locale_classes.tcc:
+
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/c++/11/ostream:
+
+/usr/include/c++/11/bits/stl_stack.h:
+
+/usr/include/c++/11/bits/locale_facets.h:
+
+/usr/include/c++/11/debug/deque:
+
+/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/bits/charconv.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
+
+/usr/include/wctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
@@ -232,6 +296,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 /usr/include/c++/11/iosfwd:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/c++/11/clocale:
 
@@ -267,6 +333,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
+/usr/include/c++/11/stack:
+
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/c++/11/bits/exception.h:
@@ -274,6 +342,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 /usr/include/c++/11/cwchar:
 
 /usr/include/c++/11/bits/stl_algobase.h:
+
+/usr/include/c++/11/system_error:
 
 /usr/include/c++/11/bits/stl_vector.h:
 
@@ -309,9 +379,15 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 
 /usr/include/c++/11/debug/formatter.h:
 
+/usr/include/c++/11/iostream:
+
+/usr/include/c++/11/bits/deque.tcc:
+
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/c++/11/backward/binders.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/c++/11/debug/functions.h:
 
@@ -355,6 +431,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 
 /usr/include/c++/11/bits/stl_function.h:
 
+/usr/include/c++/11/streambuf:
+
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/include/c++/11/bits/functexcept.h:
@@ -374,6 +452,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 /usr/include/c++/11/debug/safe_iterator.tcc:
 
 /usr/include/c++/11/vector:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
 /usr/include/c++/11/debug/map:
 
@@ -525,7 +605,13 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/c++/11/ios:
+
+/usr/include/c++/11/deque:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -547,6 +633,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
+/usr/include/c++/11/bits/basic_ios.h:
+
 /usr/include/c++/11/debug/safe_container.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
@@ -566,6 +654,8 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
 /usr/include/c++/11/bits/erase_if.h:
 
 /usr/include/c++/11/debug/map.h:
+
+/usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/c++/11/debug/multimap.h:
 

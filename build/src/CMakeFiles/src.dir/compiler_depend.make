@@ -193,6 +193,12 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/debug/deque \
+  /usr/include/c++/11/bits/stl_stack.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -221,18 +227,8 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc \
-  /usr/include/c++/11/stack \
-  /usr/include/c++/11/deque \
-  /usr/include/c++/11/bits/stl_deque.h \
-  /usr/include/c++/11/bits/deque.tcc \
-  /usr/include/c++/11/debug/deque \
-  /usr/include/c++/11/bits/stl_stack.h
+  /usr/include/c++/11/bits/fstream.tcc
 
-
-/usr/include/c++/11/bits/stl_stack.h:
-
-/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -248,10 +244,6 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
 
 /usr/include/c++/11/cwctype:
 
-/usr/include/c++/11/debug/deque:
-
-/usr/include/c++/11/bits/locale_facets.h:
-
 /usr/include/c++/11/stdexcept:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
@@ -263,6 +255,14 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
 /usr/include/c++/11/bits/ios_base.h:
 
 /usr/include/c++/11/ostream:
+
+/usr/include/c++/11/bits/stl_stack.h:
+
+/usr/include/c++/11/bits/locale_facets.h:
+
+/usr/include/c++/11/debug/deque:
+
+/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/bits/charconv.h:
 
@@ -390,9 +390,9 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
 
 /usr/include/c++/11/debug/formatter.h:
 
-/usr/include/c++/11/bits/deque.tcc:
-
 /usr/include/c++/11/iostream:
+
+/usr/include/c++/11/bits/deque.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -624,9 +624,9 @@ src/CMakeFiles/src.dir/wiki.cpp.o: ../src/wiki.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/c++/11/deque:
-
 /usr/include/c++/11/ios:
+
+/usr/include/c++/11/deque:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 

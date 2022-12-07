@@ -285,8 +285,22 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
   /usr/include/c++/11/bits/stl_multimap.h \
   /usr/include/c++/11/debug/map \
   /usr/include/c++/11/debug/map.h \
-  /usr/include/c++/11/debug/multimap.h
+  /usr/include/c++/11/debug/multimap.h \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/debug/deque \
+  /usr/include/c++/11/bits/stl_stack.h
 
+
+/usr/include/c++/11/debug/deque:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/c++/11/deque:
+
+/usr/include/c++/11/stack:
 
 /usr/include/c++/11/debug/multimap.h:
 
@@ -365,6 +379,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
 /usr/include/c++/11/bits/basic_string.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
@@ -731,6 +747,8 @@ CMakeFiles/test.dir/tests/tests.cpp.o: ../tests/tests.cpp \
 /usr/include/c++/11/cassert:
 
 /usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/c++/11/bits/stl_stack.h:
 
 /usr/include/catch2/internal/catch_decomposer.hpp:
 

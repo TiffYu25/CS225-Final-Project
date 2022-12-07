@@ -85,3 +85,51 @@ TEST_CASE("DFS check 2", "[test]") {
     vector<int> example = test.getTraversal();
     REQUIRE(example == correct_example);
 }
+
+TEST_CASE("Reverse Check 1", "[test]") {
+    const vector<vector<int>> adj = {
+        {1},\
+        {2},\
+        {4,3},\
+        {0},\
+        {5},\
+        {6},\
+        {7},\
+        {}
+    };
+    int num = 8;
+    wiki g(adj, num);
+    wiki gr = g.reverse(num);
+    const vector<vector<int>> correct_example = {
+        {3},\
+        {0},\
+        {1},\
+        {2},\
+        {2},\
+        {4},\
+        {5},\
+        {6}
+    };
+    vector<vector<int>> example = gr.getAdj();
+    REQUIRE(example == correct_example);
+}
+
+TEST_CASE("DFS Reverse Check 1", "[test]") {
+    const vector<vector<int>> adj = {
+        {1},\
+        {2},\
+        {4,3},\
+        {0},\
+        {5},\
+        {6},\
+        {7},\
+        {}
+    };
+    int num = 8;
+    wiki g(adj, num);
+    wiki gr = g.reverse(num);
+    gr.DFS(7, num);
+    vector<int> correct_example{ 7, 6, 5, 4, 2, 1, 0, 3 };
+    vector<int> example = gr.getTraversal();
+    REQUIRE(example == correct_example);
+}
