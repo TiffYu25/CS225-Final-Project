@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/cs225/CS225-Final-Project/src/utils.cpp" "src/CMakeFiles/src.dir/utils.cpp.o" "gcc" "src/CMakeFiles/src.dir/utils.cpp.o.d"
   "/workspaces/cs225/CS225-Final-Project/src/wiki.cpp" "src/CMakeFiles/src.dir/wiki.cpp.o" "gcc" "src/CMakeFiles/src.dir/wiki.cpp.o.d"
   )
 

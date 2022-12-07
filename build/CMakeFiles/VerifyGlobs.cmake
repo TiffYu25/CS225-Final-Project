@@ -36,7 +36,6 @@ endif()
 # src_sources at src/CMakeLists.txt:5 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/cs225/CS225-Final-Project/src/*.cpp")
 set(OLD_GLOB
-  "/workspaces/cs225/CS225-Final-Project/src/utils.cpp"
   "/workspaces/cs225/CS225-Final-Project/src/wiki.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

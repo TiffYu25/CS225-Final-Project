@@ -8,9 +8,9 @@ bool is_digits(const std::string &str) {
     return str.find_first_not_of("0123456789") == string::npos;
 }
 
-wiki::wiki() {
-    file = "./tests/enwiki-2013.txt";
-    reader(file, node_num);
+wiki::wiki(vector<vector<int>> adjacency, int num) {
+    node_num = num;
+    adj = adjacency;
 }
 
 wiki::wiki(string filename, int num) {
@@ -118,12 +118,14 @@ void wiki::DFS(int root, int num) {
         int curr = stk.top();
         stk.pop();
         traversal.push_back(curr);
+        scc[scc.size() - 1].push_back(curr);
         for (unsigned int i = 0; i < adj[curr].size(); i++) {
             if (!visited[adj[curr][i]]) {
                 stk.push(adj[curr][i]);
                 visited[adj[curr][i]] = true;
             }
-        } 
+        }
+        s_.push(curr);
     }
 }
 
@@ -131,3 +133,54 @@ vector<int> wiki::getTraversal() {
     return traversal;
 }
 
+void wiki::fillOrder(int v, vector<bool> visited, stack<int> &Stack) {
+    // Mark the current node as visited and print it
+    visited[v] = true;
+ 
+    // Recur for all the vertices adjacent to this vertex
+    for (auto a : adj[v]) {
+        if (!visited[a]) {
+            fillOrder(a, visited, Stack);
+        }
+    }
+    // All vertices reachable from v are processed by now, push v
+    Stack.push(v);
+}
+
+wiki wiki::reverse(int num) {
+    wiki w(vector<vector<int>>(num, vector<int>()), num);
+    for (int u = 0; u < num; u++) {
+        vector<int>::iterator i;
+        for (int v : adj[u]) {
+            w.adj[v].push_back(u);
+        }
+    }
+    return w;
+}
+
+void wiki::DFS(int s, vector<bool> visitedV) {
+    visitedV[s] = true;
+    scc[scc.size() - 1].push_back(s);
+    for (int i : adj[s]) {
+        if (!visitedV[i]) {
+            DFS(i, visitedV);
+        }  
+    }
+}
+
+void wiki::SCC(int num) {
+    vector<bool> visitedV(num, false);
+    wiki gr = reverse(num);
+
+    // Create a copy of s_
+    stack<int> Stack = s_;
+
+    while (!Stack.empty()) {
+        int s = Stack.top();
+        Stack.pop();
+        if (visitedV[s] == false) {
+            scc.push_back(vector<int>());
+            gr.DFS(s, visitedV);
+        }
+    }
+}

@@ -131,30 +131,6 @@ src/fast:
 	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
-utils.o: utils.cpp.o
-.PHONY : utils.o
-
-# target to build an object file
-utils.cpp.o:
-	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.o
-.PHONY : utils.cpp.o
-
-utils.i: utils.cpp.i
-.PHONY : utils.i
-
-# target to preprocess a source file
-utils.cpp.i:
-	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.i
-.PHONY : utils.cpp.i
-
-utils.s: utils.cpp.s
-.PHONY : utils.s
-
-# target to generate assembly for a file
-utils.cpp.s:
-	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.s
-.PHONY : utils.cpp.s
-
 wiki.o: wiki.cpp.o
 .PHONY : wiki.o
 
@@ -188,9 +164,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... src"
-	@echo "... utils.o"
-	@echo "... utils.i"
-	@echo "... utils.s"
 	@echo "... wiki.o"
 	@echo "... wiki.i"
 	@echo "... wiki.s"

@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/src.dir/utils.cpp.o"
-  "CMakeFiles/src.dir/utils.cpp.o.d"
   "CMakeFiles/src.dir/wiki.cpp.o"
   "CMakeFiles/src.dir/wiki.cpp.o.d"
   "libsrc.a"
