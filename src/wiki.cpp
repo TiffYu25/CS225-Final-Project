@@ -11,7 +11,6 @@ bool is_digits(const std::string &str) {
 wiki::wiki(vector<vector<int>> adjacency, int num) {
     node_num = num;
     adj = adjacency;
-}
 
 wiki::wiki(string filename, int num) {
     file = filename;
