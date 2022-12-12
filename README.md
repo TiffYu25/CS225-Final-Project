@@ -5,7 +5,7 @@
 * [Tests](https://github.com/TiffYu25/CS225-Final-Project/tree/main/tests)
 * [Wiki Data] wip
 * [Documentation](https://github.com/TiffYu25/CS225-Final-Project/tree/main/documentation)
-* [Written Report] wip
+* [Written Report](https://github.com/TiffYu25/CS225-Final-Project/blob/main/documentation/results.md)
 * [Presentation Video] wip
 
 ## Instructions
