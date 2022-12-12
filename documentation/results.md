@@ -16,7 +16,7 @@
 * We were able to successfully run our Strongly Connected Component Algorithm along with our DFS traversal method.
 * However, we were unable to finish and polish our Kruskal’s Algorithm as we were in a time crunch. 
 
-Our project may have been a bit too ambitious considering how busy each of our schedules were. The project would have been slightly better if we were working with a smaller dataset. In addition, some of our team members were unfamiliar with using Github. As a consequence, some of our time was spent getting used to using Github and its commands.
+Our project may have been a bit too ambitious considering how busy each of our schedules were. The project would have been slightly better if we were working with a smaller dataset. In addition, some of our team members were unfamiliar with using Github. As a consequence, some of our time was spent getting used to using Github and fixing problems related to Github through VSCode. If we were not encountering these Github related problems, we would have finished our project by the deadline.
 
 During the development of the project, we did not anticipate the bugs and runtime errors we would encounter due to the massive size of the 2018 Wikipedia txt file. We had to convert our dataset from integers to 3 unique char combinations in order to have our algorithms compile quickly and to not have our computers crash as well. Most of our time was spent trying to figure out our compilation problem, causing us to not have that much time to focus on other parts of our project.
 
