@@ -1,5 +1,7 @@
 # CS225-Final-Project
 
+eloutf, TiffYu25, esun2cs, taylorziegler
+
 ## Table of Contents
 * [Code](https://github.com/TiffYu25/CS225-Final-Project/tree/main/src)
 * [Tests](https://github.com/TiffYu25/CS225-Final-Project/tree/main/tests)
