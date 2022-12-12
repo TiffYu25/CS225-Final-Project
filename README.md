@@ -1,6 +1,6 @@
 # CS225-Final-Project
 
-eloutf, TiffYu25, esun2cs, taylorziegler
+eloutf (Eyad Loutfi), TiffYu25 (Tiffany Yu), esun2cs (Enya Sun), taylorziegler (Taylor Ziegler)
 
 ## Table of Contents
 * [Code](https://github.com/TiffYu25/CS225-Final-Project/tree/main/src)
