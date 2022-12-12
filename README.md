@@ -3,7 +3,7 @@
 Eyad Loutfi ([eloutf](https://github.com/eloutf)), Tiffany Yu ([TiffYu25](https://github.com/TiffYu25)), Enya Sun ([esun2cs](https://github.com/esun2cs)), Taylor Ziegler ([taylorziegler](https://github.com/taylorziegler))
 
 ## Table of Contents
-* [Code](https://github.com/TiffYu25/CS225-Final-Project/tree/main/src)
+* [Code Containing our Algorithms](https://github.com/TiffYu25/CS225-Final-Project/tree/main/src)
 * [Tests](https://github.com/TiffYu25/CS225-Final-Project/tree/main/tests)
 * [Wiki Data](https://drive.google.com/file/d/1VIy19fnFQyVdE_TDR3rN1yn11nqfQgFV/view)
 * [Documentation](https://github.com/TiffYu25/CS225-Final-Project/tree/main/documentation)
