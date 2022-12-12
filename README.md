@@ -1,4 +1,4 @@
-# CS225-Final-Project
+# CS225 Final Project: Wikipedia Articles
 
 eloutf (Eyad Loutfi), TiffYu25 (Tiffany Yu), esun2cs (Enya Sun), taylorziegler (Taylor Ziegler)
 
