@@ -266,6 +266,7 @@ void wiki::DFS(unsigned int root, unsigned int num) {
     stack<unsigned int> stk;
     stk.push(root);
     visited[root] = true;
+    
     while (!stk.empty()) {
         int curr = stk.top();
         stk.pop();
@@ -327,4 +328,3 @@ void wiki::SCC(unsigned int num) {
         }
     }
 }
-

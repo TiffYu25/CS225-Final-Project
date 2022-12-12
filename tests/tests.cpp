@@ -153,3 +153,23 @@ TEST_CASE("Strongly Connected Component", "[test]") {
     vector<vector<unsigned int>> example = g.getSCC();\
     REQUIRE(example == correct_example);
 }
+
+TEST_CASE("Strongly Connected Component", "[test]") {
+    const vector<vector<int>> adj = {
+        {2, 3},\
+        {0},\
+        {1},\
+        {4},\
+        {}
+    };
+    int num = 5;
+    wiki g(adj, num);
+    g.SCC(num);
+    const vector<vector<int>> correct_example{
+        {0,1,2},\
+        {3},\
+        {4}
+    };
+    vector<vector<int>> example = g.getSCC();\
+    REQUIRE(example == correct_example);
+}
