@@ -27,23 +27,23 @@ bool is_digits(const std::string &str) {
     return (unsigned int) uwu.to_ulong();
 }*/
 
-wiki::wiki() {
-    file = "./tests/enwiki-2013.txt";
-    reader(file, node_num);
+wiki::wiki(vector<vector<unsigned int>> adjacency, unsigned int num) {
+    node_num = num;
+    adj = adjacency;
 }
 
-wiki::wiki(string filename, int num) {
+wiki::wiki(string filename, unsigned int num) {
     file = filename;
     reader(file, num);
 }
 
-void wiki::reader(string filename, int num) {
+void wiki::reader(string filename, unsigned int num) {
     ifstream infile(filename);
     vector<unsigned int> inner_vec;
     vector<vector<unsigned int>> toset(num, inner_vec);
     adj = toset;
     unsigned char read_value;
-    ifstream stream{"../tests/hell/wee.bin", ios_base::in | ios_base::binary};
+    ifstream stream{"../wee.bin", ios_base::in | ios_base::binary};
     stream.exceptions(ios_base::failbit | ios_base::badbit);
     int w = -1;
     for (unsigned int i = 0; i < 105517902; i++) {
@@ -256,19 +256,14 @@ void wiki::setAdj(vector<vector<unsigned int>> toset) {
     adj = toset;
 }
 
-string wiki::getArticle(int idx) {
-    for(auto &it : articleIdx) { 
-        if(it.second == idx) { 
-            return it.first;
-        } 
-    } 
+string wiki::getArticle(unsigned int idx) {
     return "invalid";
 }
 
 //num is number of nodes
-void wiki::DFS(int root, int num) {
+void wiki::DFS(unsigned int root, unsigned int num) {
     vector<bool> visited(num, false);
-    stack<int> stk;
+    stack<unsigned int> stk;
     stk.push(root);
     visited[root] = true;
     while (!stk.empty()) {
@@ -284,8 +279,52 @@ void wiki::DFS(int root, int num) {
     }
 }
 
-vector<int> wiki::getTraversal() {
+vector<unsigned int> wiki::getTraversal() {
     return traversal;
 }
 
+void wiki::fillOrder(unsigned int v, vector<bool>& visited, stack<unsigned int> &Stack) {
+    visited[v] = true;
+    for (auto a : adj[v]) {
+        if (!visited[a]) { fillOrder(a, visited, Stack); }
+    }
+    Stack.push(v);
+}
+
+wiki wiki::reverse(unsigned int num) {
+    wiki w(vector<vector<unsigned int>>(num, vector<unsigned int>()), num);
+    for (unsigned int u = 0; u < num; u++) {
+        for (unsigned int v : adj[u]) { w.adj[v].push_back(u); }
+    }
+    return w;
+}
+
+void wiki::DFS(unsigned int s, vector<bool>& visitedV, vector<unsigned int>& components) {
+    visitedV[s] = true;
+    components.push_back(s);
+    for (int i : adj[s]) {
+        if (!visitedV[i]) { DFS(i, visitedV, components); }  
+    }
+}
+
+void wiki::SCC(unsigned int num) {
+    stack<unsigned int> Stack;
+    // Fill vertices in stack according to their finishing times in DFS
+    vector<bool> visited(num, false);
+    for (unsigned int i = 0; i < num; i++) {
+        if (!visited[i]) { fillOrder(i, visited, Stack); }
+    }
+    
+    vector<bool> visitedV(num, false);
+    wiki gr = reverse(num);
+    while (!Stack.empty()) {
+        int s = Stack.top();
+        Stack.pop();
+        if (!visitedV[s]) {
+            vector<unsigned int> components;
+            gr.DFS(s, visitedV, components);
+            scc.push_back(components);
+        }
+    }
+}
 

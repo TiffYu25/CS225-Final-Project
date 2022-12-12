@@ -1,4 +1,4 @@
-/*#include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 #include <algorithm>
 #include <iostream>
@@ -10,8 +10,8 @@
 TEST_CASE("file reads properly check 1", "[test]") {
     string filename = "../tests/example 1.txt";
     wiki test(filename, 5);
-    vector<vector<int>> example = test.getAdj();
-    const vector<vector<int>> correct_example = {{1, 2, 3, 4},\
+    vector<vector<unsigned int>> example = test.getAdj();
+    const vector<vector<unsigned int>> correct_example = {{1, 2, 3, 4},\
      {4, 3, 2, 0}, \
      {0, 3, 4, 1}, \
      {1, 2, 4, 0}, \
@@ -24,8 +24,8 @@ TEST_CASE("file reads properly check 1", "[test]") {
 TEST_CASE("file reads properly check 2", "[test]") {
     string filename = "../tests/example 2.txt";
     wiki test(filename, 5);
-    vector<vector<int>> example = test.getAdj();
-    const vector<vector<int>> correct_example = {{39, 16, 27, 15},\
+    vector<vector<unsigned int>> example = test.getAdj();
+    const vector<vector<unsigned int>> correct_example = {{39, 16, 27, 15},\
      {5, 8}, \
      {13, 3, 4}, \
      {18, 39, 80, 1128474}, \
@@ -38,8 +38,8 @@ TEST_CASE("file reads properly check 2", "[test]") {
 TEST_CASE("file reads properly check 3", "[test]") {
     string filename = "../tests/example 3.txt";
     wiki test(filename, 6);
-    vector<vector<int>> example = test.getAdj();
-    const vector<vector<int>> correct_example = {
+    vector<vector<unsigned int>> example = test.getAdj();
+    const vector<vector<unsigned int>> correct_example = {
         {39, 16, 27, 15},\
         {5, 8}, \
         {13, 3, 4}, \
@@ -56,7 +56,7 @@ TEST_CASE("DFS check 1", "[test]") {
     //and running on wiki txt will just make it rilly slow
     string filename = "../tests/example 1.txt";
     wiki test(filename, 5);
-    const vector<vector<int>> test_graph = {{3, 2, 1},\
+    const vector<vector<unsigned int>> test_graph = {{3, 2, 1},\
      {2, 0}, \
      {4, 1, 0}, \
      {0}, \
@@ -64,15 +64,15 @@ TEST_CASE("DFS check 1", "[test]") {
      };
     test.setAdj(test_graph);
     test.DFS(0, 5);
-    vector<int> correct_example{ 0, 1, 2, 4, 3 };
-    vector<int> example = test.getTraversal();
+    vector<unsigned int> correct_example{ 0, 1, 2, 4, 3 };
+    vector<unsigned int> example = test.getTraversal();
     REQUIRE(example == correct_example);
 }
 
 TEST_CASE("DFS check 2", "[test]") {
     string filename = "../tests/example 2.txt";
     wiki test(filename, 5);
-    const vector<vector<int>> test_graph = {
+    const vector<vector<unsigned int>> test_graph = {
         {1, 4, 3},\
         {0, 4}, \
         {4}, \
@@ -81,13 +81,13 @@ TEST_CASE("DFS check 2", "[test]") {
      };
     test.setAdj(test_graph);
     test.DFS(0, 5);
-    vector<int> correct_example{ 0, 3, 4, 2, 1 };
-    vector<int> example = test.getTraversal();
+    vector<unsigned int> correct_example{ 0, 3, 4, 2, 1 };
+    vector<unsigned int> example = test.getTraversal();
     REQUIRE(example == correct_example);
 }
 
 TEST_CASE("Reverse Check 1", "[test]") {
-    const vector<vector<int>> adj = {
+    const vector<vector<unsigned int>> adj = {
         {1},\
         {2},\
         {4,3},\
@@ -100,7 +100,7 @@ TEST_CASE("Reverse Check 1", "[test]") {
     int num = 8;
     wiki g(adj, num);
     wiki gr = g.reverse(num);
-    const vector<vector<int>> correct_example = {
+    const vector<vector<unsigned int>> correct_example = {
         {3},\
         {0},\
         {1},\
@@ -110,12 +110,12 @@ TEST_CASE("Reverse Check 1", "[test]") {
         {5},\
         {6}
     };
-    vector<vector<int>> example = gr.getAdj();
+    vector<vector<unsigned int>> example = gr.getAdj();
     REQUIRE(example == correct_example);
 }
 
 TEST_CASE("DFS Reverse Check 1", "[test]") {
-    const vector<vector<int>> adj = {
+    const vector<vector<unsigned int>> adj = {
         {1},\
         {2},\
         {4,3},\
@@ -125,11 +125,31 @@ TEST_CASE("DFS Reverse Check 1", "[test]") {
         {7},\
         {}
     };
-    int num = 8;
+    unsigned int num = 8;
     wiki g(adj, num);
     wiki gr = g.reverse(num);
     gr.DFS(7, num);
-    vector<int> correct_example{ 7, 6, 5, 4, 2, 1, 0, 3 };
-    vector<int> example = gr.getTraversal();
+    vector<unsigned int> correct_example{ 7, 6, 5, 4, 2, 1, 0, 3 };
+    vector<unsigned int> example = gr.getTraversal();
     REQUIRE(example == correct_example);
-}*/
+}
+
+TEST_CASE("Strongly Connected Component", "[test]") {
+    const vector<vector<unsigned int>> adj = {
+        {2, 3},\
+        {0},\
+        {1},\
+        {4},\
+        {}
+    };
+    unsigned int num = 5;
+    wiki g(adj, num);
+    g.SCC(num);
+    const vector<vector<unsigned int>> correct_example{
+        {0,1,2},\
+        {3},\
+        {4}
+    };
+    vector<vector<unsigned int>> example = g.getSCC();\
+    REQUIRE(example == correct_example);
+}

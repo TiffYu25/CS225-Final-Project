@@ -6,14 +6,13 @@
 #include <bitset>
 #include <cstddef>
 
-bool is_digits(const std::string &str) {
+/*bool is_digits(const std::string &str) {
     return str.find_first_not_of("0123456789") == string::npos;
-}
+}*/
 
 int main() {
-    /*
     //creating edges file
-    unsigned int* important = new unsigned int[4206289];
+    /*float* important = new float[4206289];
     ifstream infile("../tests/enwiki-2013.txt");
     //loads each line of the .txt as a string into string vector vec
     vector<string> vec;
@@ -73,25 +72,105 @@ int main() {
             cout << i;
             break;
         }
-        unsigned int curr = important[toadd] + 1;
+        float curr = important[toadd] + 1;
         important[toadd] = curr;
         cout << i;
         cout << "\n";
     }
 
+    float* wee = new float[4206289];
+    for (unsigned int i = 0; i < 4206289; i++) {
+        float curr = important[i];
+        if (curr == 0) {
+            wee[i] = 1;
+        } else {
+            wee[i] = 1/curr;
+        }
+    }
+
     {
-    std::ofstream stream{"../tests/hell/edge_weights.bin", std::ios_base::out | std::ios_base::binary};
+    ofstream stream{"../tests/hell/edge_weights.bin", std::ios_base::out | std::ios_base::binary};
     stream.exceptions(std::ios_base::failbit | std::ios_base::badbit);
-    stream.write(reinterpret_cast<const char*>(&(*important)), 16825156);
-    }*/
+    stream.write(reinterpret_cast<const char*>(&(*wee)), 16825156);
+    }
 
-    
+    delete[] important;
+    delete[] wee;*/
 
+    /*float min = 1;
+    unsigned int index = 0;
+    float read_value;
+    ifstream stream{"../tests/hell/edge_weights.bin", ios_base::in | ios_base::binary};
+    stream.exceptions(ios_base::failbit | ios_base::badbit);
+    for (unsigned int i = 0; i < 4206289; i++) {
+        cout << i;
+        cout << "\n";
+        stream.read(reinterpret_cast<char*>(&read_value), 4);
+        if (read_value < min) {
+            min = read_value;
+            index = i;
+        }
+    }
+    cout << "minimum is : ";
+    cout << min;
+    cout << " and index is ";
+    cout << index;
+    cout << "\n";*/
+
+    /*{
+    float* important = new float[5];
+    important[0] = 5;
+    important[1] = 6;
+    important[2] = 0;
+    important[3] = 100;
+    important[4] = 4;
+
+    {
+    ofstream stream{"../tests/hell/edge_weights_pre.bin", std::ios_base::out | std::ios_base::binary};
+    stream.exceptions(std::ios_base::failbit | std::ios_base::badbit);
+    stream.write(reinterpret_cast<const char*>(&(*important)), 20);
+    }
+    delete[] important;
+    }
+
+    float* important = new float[5];
+
+    {
+    ifstream stream{"../tests/hell/edge_weights_pre.bin", ios_base::in | ios_base::binary};
+    stream.exceptions(ios_base::failbit | ios_base::badbit);
+    float read_value;
+    for (unsigned int i = 0; i < 5; i++) {
+        stream.read(reinterpret_cast<char*>(&read_value), 4);
+        cout << read_value;
+        if (read_value != 0) {
+            important[i] = 1/read_value;
+        } else {
+            important[i] = 1;
+        }
+        cout << "\n";
+    }
+    }
+    cout << "inverses: \n";
+
+    {
+    ofstream stream{"../tests/hell/edge_weights.bin", std::ios_base::out | std::ios_base::binary};
+    stream.exceptions(std::ios_base::failbit | std::ios_base::badbit);
+    stream.write(reinterpret_cast<const char*>(&(*important)), 20);
+    }
+
+    ifstream stream{"../tests/hell/edge_weights.bin", ios_base::in | ios_base::binary};
+    stream.exceptions(ios_base::failbit | ios_base::badbit);
+    float read_value;
+    for (unsigned int i = 0; i < 5; i++) {
+        stream.read(reinterpret_cast<char*>(&read_value), 4);
+        cout << read_value;
+        cout << "\n";
+    }
+    delete[] important;*/
     
-    
-    /*string filename = "../tests/enwiki-2013.txt";
+    string filename = "../tests/enwiki-2013.txt";
     wiki test(filename, 4206289);
-    cout << '\n';*/
+    cout << '\n';
 
     //main code above this line
 
@@ -202,7 +281,6 @@ int main() {
     }
     cout << '\n';
     delete[] weewoo;*/
-
 
 
     //diff test
