@@ -1,6 +1,6 @@
 # CS225 Final Project: Wikipedia Articles
 
-eloutf (Eyad Loutfi), TiffYu25 (Tiffany Yu), esun2cs (Enya Sun), taylorziegler (Taylor Ziegler)
+Eyad Loutfi ([eloutf](https://github.com/eloutf)), Tiffany Yu ([TiffYu25](https://github.com/TiffYu25)), Enya Sun ([esun2cs](https://github.com/esun2cs)), Taylor Ziegler ([taylorziegler](https://github.com/taylorziegler))
 
 ## Table of Contents
 * [Code](https://github.com/TiffYu25/CS225-Final-Project/tree/main/src)
