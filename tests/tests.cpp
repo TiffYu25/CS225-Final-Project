@@ -1,4 +1,4 @@
-#include <catch2/catch_test_macros.hpp>
+/*#include <catch2/catch_test_macros.hpp>
 
 #include <algorithm>
 #include <iostream>
@@ -132,4 +132,4 @@ TEST_CASE("DFS Reverse Check 1", "[test]") {
     vector<int> correct_example{ 7, 6, 5, 4, 2, 1, 0, 3 };
     vector<int> example = gr.getTraversal();
     REQUIRE(example == correct_example);
-}
+}*/

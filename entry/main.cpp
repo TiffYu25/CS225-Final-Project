@@ -85,36 +85,6 @@ int main() {
     stream.write(reinterpret_cast<const char*>(&(*important)), 16825156);
     }*/
 
-    //finding most linked to articles
-    unsigned int read_value;
-    ifstream stream{"../tests/hell/edge_weights.bin", ios_base::in | ios_base::binary};
-    stream.exceptions(ios_base::failbit | ios_base::badbit);
-    for (unsigned int i = 0; i < 4206289; i++) {
-        stream.read(reinterpret_cast<char*>(&read_value), 4);
-        unsigned int cow;
-        ifstream weewoo{"../tests/hell/edge_weights.bin", ios_base::in | ios_base::binary};
-        weewoo.exceptions(ios_base::failbit | ios_base::badbit);
-        for (unsigned int j = 0; j < 4206289; j++) {
-            weewoo.read(reinterpret_cast<char*>(&cow), 4);
-            float s = (float) read_value;
-            float t = (float) cow;
-            float inverse_read = 1 / s;
-            float inverse_cow = 1 / t;
-            if (((read_value > cow) && !(inverse_cow > inverse_read)) || ((read_value < cow) && !(inverse_cow < inverse_read)) || ((read_value == cow) && !(inverse_cow == inverse_read))) {
-                cout << "data is broken";
-                cout << "\n";
-            }
-        }
-    }
-    int z = 431795;
-    float t = (float) z;
-    int g = 0;
-    float c = (float) g;
-    cout << t;
-    cout << "\n";
-    cout << c;
-    cout << "\n";
-
     
 
     
