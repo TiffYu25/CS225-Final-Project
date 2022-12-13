@@ -369,15 +369,20 @@ void wiki::fileToArticle() {
 	}
 }
 
-vector<string> SplitString(const string & str1, char sep) {
+vector<string> SplitString(const string & str, char sep) {
     vector<string> fields;
-    string str = str1;
-    string::size_type pos;
-    while((pos=str.find(sep)) != string::npos) {
-        fields.push_back(str.substr(0,pos));
-        str.erase(0,pos+1);  
+    string split;
+    bool found = false;
+    for (char c : str) {
+        if (c == ',' && !found) {
+            fields.push_back(split);
+            split = "";
+            found = true;
+            continue;
+        }
+        split += c;
     }
-    fields.push_back(str);
+    fields.push_back(split);
     return fields;
 }
 
