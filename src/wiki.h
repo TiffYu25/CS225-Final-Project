@@ -6,14 +6,6 @@
 
 using namespace std;
 
-#pragma once
-#include <vector>
-#include <map>
-#include <string>
-#include <stack>
-
-using namespace std;
-
 class wiki {
 public:
     wiki(vector<vector<unsigned int>> adjacency, unsigned int num);
