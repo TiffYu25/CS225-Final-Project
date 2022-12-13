@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <stack>
+#include<bits/stdc++.h>
 #include <bitset>
 
 //used for checking that strings are just numeric
@@ -73,6 +74,33 @@ void wiki::reader(string filename, unsigned int num) {
             adj[w].push_back(node);
         }
     }
+}
+
+void wiki::SetEdgeWeights() {
+    float read_value;
+    ifstream stream{"../tests/hell/edge_weights.bin", ios_base::in | ios_base::binary};
+    stream.exceptions(ios_base::failbit | ios_base::badbit);
+    for (unsigned int i = 0; i < 4206289; i++) {
+        cout << i;
+        cout << "\n";
+        stream.read(reinterpret_cast<char*>(&read_value), 4);
+        float toadd = read_value;
+        edgeweights[i] = toadd;
+    }
+}
+
+vector<pair<unsigned int, unsigned int>> wiki::sortScc() {
+    vector<pair<unsigned int, unsigned int>> weewoo;
+    vector<unsigned int> sizes(scc.size(), 0);
+    for (unsigned int i = 0; i < scc.size(); i++) {
+        unsigned int sum = 0;
+        for (unsigned int j = 0; j < scc[i].size(); j++) {
+            sum += edgeweights[scc[i][j]];
+        }
+        weewoo.push_back({sum, i});
+    }
+    sort(weewoo.begin(), weewoo.end());
+    return weewoo; 
 }
 
 /*void wiki::reader(string filename, int num) {
@@ -266,7 +294,6 @@ void wiki::DFS(unsigned int root, unsigned int num) {
     stack<unsigned int> stk;
     stk.push(root);
     visited[root] = true;
-    
     while (!stk.empty()) {
         int curr = stk.top();
         stk.pop();
