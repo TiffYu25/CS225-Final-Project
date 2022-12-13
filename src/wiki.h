@@ -26,6 +26,10 @@ public:
     wiki reverse(unsigned int num);
     // Computes strongly connected components
     void SCC(unsigned int num);
+    
+    void fileToArticle();
+    void writeSCCToFile(unsigned int index);
+    
 private:
     vector<vector<unsigned int>> adj; // adjacency lists for articles
     map<unsigned int, string> articleMap; // Contains the indexes for each article
@@ -34,3 +38,5 @@ private:
     vector<vector<unsigned int>> scc;
     unsigned int node_num = 4206289; //total number of nodes
 };
+
+vector<string> SplitString(const string & str1, char sep);
