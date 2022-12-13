@@ -328,3 +328,37 @@ void wiki::SCC(unsigned int num) {
         }
     }
 }
+
+void wiki::fileToArticle() {
+    ifstream infile("../woo.txt");
+    string line;
+    vector<string> vec;
+    while (getline(infile, line)) {
+        string item;
+        vector<string> split = SplitString(line, ',');
+        unsigned int index = stoi(split[0]);
+        string article = split[1];
+        articleMap[index] = article;
+	}
+}
+
+vector<string> SplitString(const string & str1, char sep) {
+    vector<string> fields;
+    string str = str1;
+    string::size_type pos;
+    while((pos=str.find(sep)) != string::npos) {
+        fields.push_back(str.substr(0,pos));
+        str.erase(0,pos+1);  
+    }
+    fields.push_back(str);
+    return fields;
+}
+
+void wiki::writeSCCToFile(unsigned int index) {
+    string filename = "../scc.txt";
+    ofstream o(filename.c_str());
+    o << "The strongly connected component in our graph contains:\n";
+    for (unsigned int v : scc[index]) {
+        o << articleMap[v] << endl;
+    }
+}
