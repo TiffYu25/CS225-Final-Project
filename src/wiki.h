@@ -28,6 +28,8 @@ public:
     // Computes strongly connected components
     void SCC(int num);
 
+    void writeSCCToFile();
+
 private:
     vector<vector<int>> adj; // adjacency lists for articles
     map<string, int> articleIdx; // Contains the indexes for each article

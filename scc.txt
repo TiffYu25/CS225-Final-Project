@@ -1,0 +1,4 @@
+The strongly connected components in our graph are:
+0 1 2 
+3 
+4 

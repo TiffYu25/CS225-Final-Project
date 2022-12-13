@@ -18,11 +18,13 @@ int main() {
 
     int num = 5;
     wiki g(adj, num);
+    // SCC
+    g.SCC(num);
+
+    g.writeSCCToFile();
     // // Create Reverse Graph
     // wiki gr = g.reverse(num);
 
-    // SCC
-    // g.SCC(num);
     // vector<vector<int>> scc = g.getSCC();
     // for (vector<int> v : scc) {
     //     for (int i : v) {

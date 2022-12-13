@@ -12,4 +12,6 @@ add_test( [==[Reverse Check 1]==] /workspaces/cs225/CS225-Final-Project/build/te
 set_tests_properties( [==[Reverse Check 1]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/CS225-Final-Project/build)
 add_test( [==[DFS Reverse Check 1]==] /workspaces/cs225/CS225-Final-Project/build/test [==[DFS Reverse Check 1]==]  )
 set_tests_properties( [==[DFS Reverse Check 1]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/CS225-Final-Project/build)
-set( test_TESTS [==[file reads properly check 1]==] [==[file reads properly check 2]==] [==[file reads properly check 3]==] [==[DFS check 1]==] [==[DFS check 2]==] [==[Reverse Check 1]==] [==[DFS Reverse Check 1]==])
+add_test( [==[Strongly Connected Component]==] /workspaces/cs225/CS225-Final-Project/build/test [==[Strongly Connected Component]==]  )
+set_tests_properties( [==[Strongly Connected Component]==] PROPERTIES WORKING_DIRECTORY /workspaces/cs225/CS225-Final-Project/build)
+set( test_TESTS [==[file reads properly check 1]==] [==[file reads properly check 2]==] [==[file reads properly check 3]==] [==[DFS check 1]==] [==[DFS check 2]==] [==[Reverse Check 1]==] [==[DFS Reverse Check 1]==] [==[Strongly Connected Component]==])

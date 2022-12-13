@@ -176,3 +176,15 @@ void wiki::SCC(int num) {
         }
     }
 }
+
+void wiki::writeSCCToFile() {
+    string filename = "../scc.txt";
+    ofstream o(filename.c_str());
+    o << "The strongly connected components in our graph are:\n";
+    for (vector<int> v : scc) {
+        for (int i : v) {
+            o << i << " ";
+        }
+        o << endl;
+    }
+}
