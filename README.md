@@ -8,7 +8,7 @@ Eyad Loutfi ([eloutf](https://github.com/eloutf)), Tiffany Yu ([TiffYu25](https:
 * Data: [Hyperlinks](https://drive.google.com/file/d/1VIy19fnFQyVdE_TDR3rN1yn11nqfQgFV/view) and [Article Names](https://drive.google.com/file/d/1MS6JxROHhEdAwvo--Tyt6z4q-CpR8uR3/view)
 * [Documentation](https://github.com/TiffYu25/CS225-Final-Project/tree/main/documentation)
 * [Written Report](https://github.com/TiffYu25/CS225-Final-Project/blob/main/documentation/results.md)
-* [Presentation Video] wip
+* [Presentation Video](https://drive.google.com/file/d/1tfkKaqkH-cp16karhrAm1ZOl_It0KaS7/view?usp=sharing)
 
 ## Instructions
 
